@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Carolina Risuenho - Odontologia & Estética</title>
+    
+    <!-- Fonte Elegante e Fina (Raleway) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Ícones (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind CSS para Estilização -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuração das Cores Personalizadas -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D9AD77',         // Dourado
+                        bgBlueLight: '#465173',  // Azul mais claro
+                        bgBlueDark: '#1C3462',   // Azul Profundo
+                    },
+                    fontFamily: {
+                        sans: ['Raleway', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        .glass-effect {
+            background: rgba(28, 52, 98, 0.9);
+            backdrop-filter: blur(10px);
+        }
+        /* Classe para imagem de perfil redonda com borda deslocada */
+        .profile-glow {
+            box-shadow: 0 0 40px -10px rgba(217, 173, 119, 0.3);
+        }
+    </style>
+</head>
+<body class="font-sans font-light text-white antialiased bg-bgBlueDark">
+
+    <!-- HEADER / NAVEGAÇÃO -->
+    <nav class="fixed w-full z-50 glass-effect border-b border-gold/20">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo Area -->
+            <div class="h-12 w-auto">
+                <img src="LOGOTIPO MARCA D'AGUA -01.png" alt="Dra. Logo" class="h-full object-contain brightness-0 invert opacity-90"> 
+            </div>
+
+            <button onclick="toggleMenu()" class="md:hidden text-gold focus:outline-none">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#sobre" class="text-white hover:text-gold transition text-sm tracking-widest uppercase font-light">Quem Sou</a>
+                <a href="#procedimentos" class="text-white hover:text-gold transition text-sm tracking-widest uppercase font-light">Procedimentos</a>
+                <a href="#contato" class="px-6 py-2 rounded-full border border-gold text-gold hover:bg-gold hover:text-bgBlueDark text-sm tracking-wide transition duration-300">
+                    Agende sua Consula
+                </a>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-bgBlueDark border-t border-gold/20 absolute w-full shadow-2xl">
+            <div class="flex flex-col p-6 space-y-6 text-center">
+                <a href="#sobre" onclick="toggleMenu()" class="text-white tracking-widest text-lg font-light hover:text-gold">QUEM SOU</a>
+                <a href="#procedimentos" onclick="toggleMenu()" class="text-white tracking-widest text-lg font-light hover:text-gold">PROCEDIMENTOS</a>
+                <a href="#contato" onclick="toggleMenu()" class="bg-gold text-bgBlueDark py-3 rounded font-medium tracking-wide">
+                    AGENDE SUA CONSULTA
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (Pessoal & Acolhedora) -->
+    <header class="relative min-h-screen flex items-center justify-center pt-16 px-4 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-bgBlueLight to-bgBlueDark"></div>
+        
+        <!-- Imagem de fundo focada em rosto feminino/sorriso -->
+        <div class="absolute inset-0">
+             <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80" alt="Sorriso Feminino" class="w-full h-full object-cover opacity-20 mix-blend-overlay">
+        </div>
+
+        <div class="relative z-10 text-center max-w-4xl mx-auto space-y-6">
+            <p class="text-gold tracking-[0.3em] text-xs md:text-sm uppercase font-medium">Dra. Carolina Risuenho</p>
+            <h1 class="text-5xl md:text-7xl font-thin leading-tight text-white">
+                O seu sorriso é a <br> <span class="text-gold font-light italic">minha assinatura.</span>
+            </h1>
+            <p class="text-gray-300 text-lg font-extralight max-w-lg mx-auto leading-relaxed mt-4">
+                Harmonizando saúde e estética com um olhar cuidadoso, detalhista e dedicado a realçar sua beleza natural.
+            </p>
+            <div class="pt-10 flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#contato" class="px-10 py-4 rounded-sm bg-gold text-bgBlueDark tracking-widest hover:bg-white transition transform hover:scale-105 font-medium shadow-lg">
+                    AGENDAR CONSULTA
+                </a>
+                <a href="#sobre" class="px-10 py-4 rounded-sm border border-white/30 text-white tracking-widest hover:border-gold hover:text-gold transition">
+                    CONHEÇA A DRA.
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEÇÃO SOBRE (Foco na Profissional) -->
+    <section id="sobre" class="py-24 bg-bgBlueDark px-4 relative">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <!-- Galeria da Dentista (Slideshow) -->
+            <div class="w-full md:w-1/2 flex justify-center md:justify-end">
+                <div class="relative w-80 h-96 md:w-96 md:h-[500px] group">
+                    <!-- Moldura Delicada (Fixa) -->
+                    <div class="absolute inset-0 border border-gold/40 transform -translate-x-4 -translate-y-4 rounded-sm z-0"></div>
+                    
+                    <!-- Container das Imagens -->
+                    <div class="relative w-full h-full rounded-sm shadow-2xl profile-glow overflow-hidden z-10 bg-bgBlueDark">
+                        <!-- Imagem 1 (Ativa inicialmente) -->
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80" 
+                             class="gallery-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100 grayscale-[30%] group-hover:grayscale-0" 
+                             alt="Dra. Retrato">
+                        
+                        <!-- Imagem 2 -->
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80" 
+                             class="gallery-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 grayscale-[30%] group-hover:grayscale-0" 
+                             alt="Dra. Atendimento">
+                             
+                        <!-- Imagem 3 -->
+                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80" 
+                             class="gallery-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 grayscale-[30%] group-hover:grayscale-0" 
+                             alt="Consultório Detalhe">
+                             
+                        <!-- Overlay Gradiente sutil para garantir legibilidade se houver texto sobreposto -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-bgBlueDark/40 to-transparent pointer-events-none"></div>
+                    </div>
+
+                    <!-- Indicadores (Bolinhas) -->
+                    <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-3 z-20">
+                        <button onclick="manualSlide(0)" class="slide-dot w-2 h-2 rounded-full bg-white transition-all duration-300 opacity-100 scale-125" aria-label="Slide 1"></button>
+                        <button onclick="manualSlide(1)" class="slide-dot w-2 h-2 rounded-full bg-white transition-all duration-300 opacity-40 hover:opacity-100" aria-label="Slide 2"></button>
+                        <button onclick="manualSlide(2)" class="slide-dot w-2 h-2 rounded-full bg-white transition-all duration-300 opacity-40 hover:opacity-100" aria-label="Slide 3"></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="w-full md:w-1/2 space-y-6 text-center md:text-left">
+                <h3 class="text-gold text-xs tracking-[0.4em] uppercase opacity-90">Minha Essência</h3>
+                <h2 class="text-3xl md:text-4xl font-thin text-white">Olá, muito prazer.</h2>
+                
+                <div class="space-y-4 text-gray-300 font-light leading-loose text-sm md:text-base">
+                    <p>
+                        Sou apaixonada por transformar vidas através do sorriso. Acredito que a odontologia vai muito além dos dentes; é sobre autoestima, confiança e a liberdade de se expressar.
+                    </p>
+                    <p>
+                        Com um olhar minucioso e cuidados, busco entender a singularidade de cada paciente. Meu consultório é um reflexo do meu cuidado: um ambiente onde você será ouvida e acolhida com exclusividade.
+                    </p>
+                </div>
+
+                <div class="pt-6">
+                    <p class="text-gold/60 text-xs tracking-widest mt-2 uppercase">Dra. Carolina Risuenho</p>
+                    <br>
+                    <br>
+                    <br>
+                    <img src="LOGOTIPO MARCA D'AGUA -01.png" alt="Assinatura" class="h-12 opacity-80 brightness-0 invert mx-auto md:mx-0">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO PROCEDIMENTOS (Abordagem "Como posso ajudar") -->
+    <section id="procedimentos" class="py-24 bg-bgBlueLight px-4 relative overflow-hidden">
+        <!-- Elemento decorativo suave -->
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-gold opacity-5 rounded-full blur-[120px] translate-x-1/2 translate-y-1/2"></div>
+
+        <div class="max-w-5xl mx-auto relative z-10">
+            <div class="text-center mb-16 space-y-2">
+                <h3 class="text-gold text-xs tracking-[0.3em] uppercase">Meu Cuidado</h3>
+                <h2 class="text-3xl md:text-4xl font-thin text-white">Como posso realçar sua beleza?</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group text-center space-y-4 p-6 hover:bg-white/5 rounded transition duration-500">
+                    <div class="w-16 h-16 mx-auto bg-bgBlueDark rounded-full flex items-center justify-center border border-gold/30 group-hover:border-gold transition">
+                        <i data-lucide="sparkles" class="text-gold w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-lg font-normal text-white">Estética Dental</h4>
+                    <p class="text-gray-300 text-sm font-extralight leading-relaxed">
+                        Lentes de contato e facetas desenhadas para harmonizar com seus traços faciais delicadamente.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group text-center space-y-4 p-6 hover:bg-white/5 rounded transition duration-500">
+                    <div class="w-16 h-16 mx-auto bg-bgBlueDark rounded-full flex items-center justify-center border border-gold/30 group-hover:border-gold transition">
+                        <i data-lucide="heart-handshake" class="text-gold w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-lg font-normal text-white">Prevenção & Cuidado</h4>
+                    <p class="text-gray-300 text-sm font-extralight leading-relaxed">
+                        Um acompanhamento próximo e gentil para manter sua saúde bucal sempre em dia.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group text-center space-y-4 p-6 hover:bg-white/5 rounded transition duration-500">
+                    <div class="w-16 h-16 mx-auto bg-bgBlueDark rounded-full flex items-center justify-center border border-gold/30 group-hover:border-gold transition">
+                        <i data-lucide="smile" class="text-gold w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-lg font-normal text-white">Harmonização</h4>
+                    <p class="text-gray-300 text-sm font-extralight leading-relaxed">
+                        Procedimentos sutis que equilibram estética e função, respeitando sua naturalidade.
+                    </p>
+                </div>
+                <!-- Card 4 -->
+                <div class="group text-center space-y-4 p-6 hover:bg-white/5 rounded transition duration-500">
+                    <div class="w-16 h-16 mx-auto bg-bgBlueDark rounded-full flex items-center justify-center border border-gold/30 group-hover:border-gold transition">
+                        <i data-lucide="sparkles" class="text-gold w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-lg font-normal text-white">Clareamento</h4>
+                    <p class="text-gray-300 text-sm font-extralight leading-relaxed">
+                        Seu sorriso merece brilhar com segurança. Clareamento supervisionado por profissional credenciada: eficácia real e zero preocupação.
+                    </p>
+                </div>
+                <!-- Card 5 -->
+                <div class="group text-center space-y-4 p-6 hover:bg-white/5 rounded transition duration-500">
+                    <div class="w-16 h-16 mx-auto bg-bgBlueDark rounded-full flex items-center justify-center border border-gold/30 group-hover:border-gold transition">
+                        <i data-lucide="syringe" class="text-gold w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-lg font-normal text-white">Botox</h4>
+                    <p class="text-gray-300 text-sm font-extralight leading-relaxed">
+                        Rejuvenesça com tranquilidade. Procedimento realizado com técnica e rigor por profissional qualificada. A naturalidade que você busca, com a segurança que você precisa.
+                    </p>
+                </div>
+                <!-- Card 6 -->
+                <div class="group text-center space-y-4 p-6 hover:bg-white/5 rounded transition duration-500">
+                    <div class="w-16 h-16 mx-auto bg-bgBlueDark rounded-full flex items-center justify-center border border-gold/30 group-hover:border-gold transition">
+                        <i data-lucide="baby" class="text-gold w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-lg font-normal text-white">Adulto e Infantil</h4>
+                    <p class="text-gray-300 text-sm font-extralight leading-relaxed">
+Sorrisos sem medo, em qualquer idade. Uma experiência leve e acolhedora, onde técnica e carinho andam juntos para atender adultos e crianças com total tranquilidade.                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO CONTATO (Convite pessoal) -->
+    <section id="contato" class="py-24 bg-bgBlueDark px-4 border-t border-white/5">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-thin text-white mb-6">Vamos conversar?</h2>
+            <p class="text-gray-300 font-light mb-10 max-w-lg mx-auto">
+                Terei o maior prazer em receber você no meu espaço e planejar o sorriso que você sempre sonhou.
+            </p>
+
+            <div class="bg-gradient-to-b from-white/5 to-transparent border border-white/10 p-8 rounded-sm backdrop-blur-sm">
+                <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 mb-8 flex-wrap">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="map-pin" class="text-gold w-4 h-4"></i>
+                        <span class="text-white font-light text-sm">Itajaí - SC</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="map-pin" class="text-gold w-4 h-4"></i>
+                        <span class="text-white font-light text-sm">Irituia - PA</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="map-pin" class="text-gold w-4 h-4"></i>
+                        <span class="text-white font-light text-sm">Belém - PA</span>
+                    </div>
+                    
+                    <div class="hidden md:block w-px h-8 bg-gold/20"></div>
+
+                    <!-- Novos ícones Sociais e de Mensagem -->
+                    <div class="flex items-center gap-6">
+                        <a href="https://www.instagram.com/consultorio.carolinarisuenho/" target="_blank" class="group flex items-center gap-2" title="Siga no Instagram">
+                            <div class="p-2 bg-white/5 rounded-full group-hover:bg-gold/20 transition">
+                                <i data-lucide="instagram" class="text-gold w-5 h-5"></i>
+                            </div>
+                            <span class="text-white font-light text-sm hidden lg:inline">Instagram</span>
+                        </a>
+                        
+                        <a href="http://wa.me/91992793385" target="_blank" class="group flex items-center gap-2" title="Envie uma mensagem">
+                            <div class="p-2 bg-white/5 rounded-full group-hover:bg-gold/20 transition">
+                                <i data-lucide="message-circle" class="text-gold w-5 h-5"></i>
+                            </div>
+                            <span class="text-white font-light text-sm hidden lg:inline">(91) 99279-3385</span>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="http://wa.me/91992793385" class="inline-flex w-full md:w-auto items-center justify-center gap-3 px-12 py-4 bg-gold text-bgBlueDark font-medium tracking-widest hover:bg-white transition duration-300 shadow-lg">
+                    AGENDE SUA CONSULTA PELO WHATSAPP
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER Minimalista -->
+    <footer class="bg-black/40 py-8 text-center px-4">
+        <div class="max-w-4xl mx-auto flex flex-col items-center gap-4">
+            <img src="LOGOTIPO MARCA D'AGUA -01.png" alt="Logo Footer" class="h-6 opacity-50 brightness-0 invert">
+
+                        <a href="https://www.instagram.com/consultorio.carolinarisuenho/" target="_blank" class="group flex items-center gap-2" title="Siga no Instagram">
+                            <div class="p-2 bg-white/5 rounded-full group-hover:bg-gold/20 transition">
+                                <i data-lucide="instagram" class="text-gold w-5 h-5"></i>
+                            </div>
+                            <span class="text-white font-light text-sm hidden lg:inline">Instagram</span>
+                        </a>
+
+                        <a href="http://wa.me/91992793385" target="_blank" class="group flex items-center gap-2" title="Envie uma mensagem">
+                            <div class="p-2 bg-white/5 rounded-full group-hover:bg-gold/20 transition">
+                                <i data-lucide="message-circle" class="text-gold w-5 h-5"></i>
+                            </div>
+                            <span class="text-white font-light text-sm hidden lg:inline">(91) 99279-3385</span>
+                        </a>
+
+            <p class="text-gray-600 text-[10px] tracking-[0.2em] font-light">
+                FEITO COM <i data-lucide="heart" class="w-3 h-3 inline text-gold mx-1"></i> PELA DRA. CAROLINA RISUENHO
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Lógica da Galeria (Slideshow)
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.gallery-slide');
+        const dots = document.querySelectorAll('.slide-dot');
+        const totalSlides = slides.length;
+        let slideInterval;
+
+        function showSlide(index) {
+            // Remove a classe ativa de todos
+            slides.forEach(slide => slide.classList.replace('opacity-100', 'opacity-0'));
+            dots.forEach(dot => {
+                dot.classList.remove('opacity-100', 'scale-125');
+                dot.classList.add('opacity-40');
+            });
+
+            // Ativa o slide atual
+            slides[index].classList.replace('opacity-0', 'opacity-100');
+            dots[index].classList.remove('opacity-40');
+            dots[index].classList.add('opacity-100', 'scale-125');
+            
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            let next = (currentSlide + 1) % totalSlides;
+            showSlide(next);
+        }
+
+        function startSlideshow() {
+            slideInterval = setInterval(nextSlide, 4000); // Troca a cada 4 segundos
+        }
+
+        function manualSlide(index) {
+            clearInterval(slideInterval); // Para o timer ao clicar
+            showSlide(index);
+            startSlideshow(); // Reinicia o timer
+        }
+
+        // Inicia a galeria
+        startSlideshow();
+    </script>
+</body>
+</html>
